@@ -26,12 +26,13 @@ body {
     background-size: contain;
     align-items: center;
     text-align: center;
+    background-size: cover;
 }
 
 .container {
-    height: 100vh;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
 }
 
 .container__botao {
@@ -61,16 +62,32 @@ body {
 
 .container__titulo {
     font-size: 28px;
-    font-weight: 700;
 }
 
+@media (max-width: 768px) {
+    .container__titulo {
+        font-size: 20px;
+    }
+}
 .container__imagem {
     margin: 1em 0 2em 0;
 }
 
-.container__caixa {
-    margin: 0 6em;
+.container__imagem, .filme__imagem {
+    max-width: 100%;
+    height: auto;
 }
+
+.container__caixa {
+    margin: 0 2em;
+}
+
+@media (max-width: 768px) {
+    .container__caixa {
+        margin: 0 1em; /* Reduz o espaçamento lateral em telas pequenas */
+    }
+}
+
 
 .secundario__imagem {
     width: 80%;
